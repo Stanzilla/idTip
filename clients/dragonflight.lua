@@ -12,7 +12,7 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
 				IDTip:addLine(self, id, IDTip.kinds.spell)
 
 				local outputItemInfo = C_TradeSkillUI.GetRecipeOutputItemData(id, nil)
-				if outputItemInfo then
+				if outputItemInfo and outputItemInfo.itemID then
 					IDTip:addGenericLine(self, "== Recipe Output ==")
 					IDTip:addLine(self, outputItemInfo.itemID, IDTip.kinds.item)
 				end
