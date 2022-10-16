@@ -6,7 +6,15 @@ Adds IDs to the ingame tooltips.
 
 Please report any requests/bugs through an [issue](https://github.com/ItsJustMeChris/idTip-Community-Fork/issues/new).
 
-## Downloads 
+## Downloads
 
-- [Addon Site on Curse](https://wow.curseforge.com/projects/idtip)
-- [Addon Site on WoWInterface](https://www.wowinterface.com/downloads/fileinfo.php?id=17033)
+TBD, use github download (Remove -beta from folder name)
+
+## Usage
+```
+Hover over stuff
+
+You can enable/disable displaying IDs with the command
+
+/idtip
+```

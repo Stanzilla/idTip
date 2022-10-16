@@ -1,6 +1,14 @@
-## Interface: 90005
+## Interface: 100002
 ## Title: idTip
 ## Version: 10.1.1
 ## Notes: Adds IDs to the ingame tooltips
-## Author: silverwind
-idTip.lua
+## Author: silverwind, ItsJustMeChris
+## SavedVariables: IDTIP_CONFIG
+libs/LibStub.lua
+lib/shared.lua
+lib/settings.lua
+lib/helpers.lua
+clients/shared.lua
+clients/classic.lua
+clients/dragonflight.lua
+clients/shadowlands.lua
