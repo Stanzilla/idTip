@@ -2,6 +2,7 @@ local IDTipLib = LibStub:NewLibrary("idTip", 1)
 
 local _, IDTip = ...
 
+-- The kinds of IDs you can apply to Tooltips
 IDTip.kinds = {
 	spell = "SpellID",
 	item = "ItemID",
@@ -42,6 +43,7 @@ local function table_invert(t)
 	return s
 end
 
+-- Inverse of the kinds table, useful for going back and forth programmatically for whatever reason
 IDTip.kinds_inverse = table_invert(IDTip.kinds)
 
 local ALL_IDS = {}
@@ -55,6 +57,9 @@ local function contains(table, element)
 	return false
 end
 
+-- Add raw text to a tooltip
+-- @tooltip | Tooltip frame IE: GameTooltip
+-- @line | string | number the text to apply to the tooltip
 function IDTipLib:addGenericLine(tooltip, line)
 	local frame, text
 	for i = 1, 15 do
@@ -74,6 +79,10 @@ end
 
 local hooked = {}
 
+-- Add a 'kinds' line to a tooltip
+-- @tooltip | Tooltip frame IE: GameTooltip
+-- @id | a single id (string | number) or an array of id's
+-- @kind | an IDTip.kinds kind
 function IDTipLib:addLine(tooltip, id, kind)
 	if not IDTIP_CONFIG[IDTip.kinds_inverse[kind]] then
 		return
@@ -158,10 +167,15 @@ function IDTipLib:addLine(tooltip, id, kind)
 	tooltip:Show()
 end
 
+-- Programmatically get all IDTip IDs applied to a tooltip
 function IDTipLib:GetAllIds()
 	return ALL_IDS
 end
 
+-- Add an IDTip kinds line based on the text value of a kinds key
+-- @tooltip | Tooltip frame IE: GameTooltip
+-- @id | a single id (string | number) or an array of id's
+-- @kind | an IDTip.kinds kind
 function IDTipLib:addLineByKind(frame, id, kind)
 	if not kind or not id then
 		return
@@ -193,6 +207,9 @@ end
 
 local addon_watchers = {}
 
+-- Register the addon loaded event listener for a specific addon
+-- @addon | string Addon name
+-- @cb | function callback method to invoke when addon loaded
 function IDTipLib:RegisterAddonLoad(addon, cb)
 	table.insert(addon_watchers, { addon = addon, cb = cb })
 end
@@ -208,6 +225,8 @@ f:SetScript("OnEvent", function(_, _, addon)
 	end
 end)
 
+-- Log a message to the chat with IDTip 'branding'
+-- @... | vararg parameters to add to the print statement
 function IDTipLib:Log(...)
 	print("|cffFF8000[IDTip]|r ", ...)
 end
