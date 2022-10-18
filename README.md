@@ -11,7 +11,11 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 
 TBD
 
-[GitHub](https://github.com/ItsJustMeChris/idTip-Community-Fork/releases)
+https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip
+
+<p align="center">
+    <a href="https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip"><img src="https://img.shields.io/badge/Download%20idTip-blue" alt="idTip.zip" /></a>
+</p>
 
 ## Usage
 ```
