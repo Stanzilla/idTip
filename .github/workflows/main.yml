@@ -1,5 +1,10 @@
 name: Bundle/Release idTip.zip
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   Bundle:
     runs-on: ubuntu-latest
