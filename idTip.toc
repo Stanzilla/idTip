@@ -10,3 +10,5 @@ lib/settings.lua
 lib/helpers.lua
 clients/shared.lua
 clients/shadowlands.lua
+clients/dragonflight.lua
+clients/classic.lua
