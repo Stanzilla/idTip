@@ -18,5 +18,5 @@ jobs:
       - name: Upload Release Package
         uses: actions/upload-artifact@v2
         with:
-          name: Release
+          name: idTip.zip
           path: idTip.zip
