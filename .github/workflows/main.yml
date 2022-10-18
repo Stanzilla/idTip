@@ -27,7 +27,7 @@ jobs:
           draft: false
           prerelease: false
           release_name: idTip
-          tag_name: ${{ github.ref }}
+          tag_name: Release
           body: ${{ github.event.head_commit.message }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
