@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: idTip
-          path: idTip.zip
+          path: idTip
       - name: release
         uses: actions/create-release@v1
         id: create_release
