@@ -9,7 +9,8 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 
 ## Downloads
 
-TBD, use github download (Remove -beta from folder name)
+TBD
+[GitHub](https://github.com/ItsJustMeChris/idTip-Community-Fork/releases)
 
 ## Usage
 ```
