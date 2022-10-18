@@ -1,0 +1,20 @@
+name: Bundle/Release idTip.zip
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Bundle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Make idTip directory
+        run: mkdir idTip
+      - name: Move all files to idTip directory
+        run: mv * idTip
+      - name: Zip idTip
+        uses: montudor/action-zip@v1.0.0
+        with:
+          args: zip -qq -r idTip.zip idTip
+      - name: Upload Releasae Package
+        uses: actions/upload-artifact@v2
+        with:
+          name: Release
+          path: idTip.zip
