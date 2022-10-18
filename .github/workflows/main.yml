@@ -7,10 +7,15 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: actions-semver
+        uses: dshare-inc/actions-semver@1.0.3
+        with:
+          version: 11
+          method: patch
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
-        run: ls -la && mv *.toc idTip/ && mv clients/ idTip/ && mv lib/ idTip/ && mv libs/ idTip/
+        run: mv *.toc idTip/ && mv clients/ idTip/ && mv lib/ idTip/ && mv libs/ idTip/
       - name: Zip idTip
         uses: montudor/action-zip@v1.0.0
         with:
@@ -18,5 +23,5 @@ jobs:
       - name: Upload Release Package
         uses: actions/upload-artifact@v2
         with:
-          name: idTip.zip
+          name: idTip-${{ env.VER }}.zip
           path: idTip.zip
