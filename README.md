@@ -1,18 +1,23 @@
 
+
 # idTip
 
-Adds IDs to the ingame tooltips.
+Adds anything's IDs to the ingame tooltips.
 
-![Screenshot](http://i.imgur.com/ngS3fc9.jpg)
+![Screenshot](https://i.imgur.com/S6kwDlz.png)
 
 Please report any requests/bugs through an [issue](https://github.com/ItsJustMeChris/idTip-Community-Fork/issues/new).
 
 ## Downloads
 
-TBD
+<p align="left">
+<p>Mostly Up To Date</p>
+    <a href="https://www.curseforge.com/wow/addons/idtip-community-fork"><img src="https://img.shields.io/badge/Download%20From-Curse-blue" alt="CurseForge" /></a>
+</p>
 
 <p align="left">
-    <a href="https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip"><img src="https://img.shields.io/badge/Download%20idTip-blue" alt="idTip.zip" /></a>
+<p>Always Up To Date</p>
+    <a href="https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip"><img src="https://img.shields.io/badge/Download%20-Direct From GitHub-blue" alt="idTip.zip" /></a>
 </p>
 
 ## Usage
