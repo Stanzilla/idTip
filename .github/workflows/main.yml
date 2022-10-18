@@ -28,7 +28,7 @@ jobs:
           prerelease: false
           release_name: idTip
           tag_name: ${{ github.ref }}
-          body_path: CHANGELOG.md
+          body: ${{ github.event.head_commit.message }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Upload artifact
