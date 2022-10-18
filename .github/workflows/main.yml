@@ -1,5 +1,4 @@
 name: Bundle/Release idTip.zip
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   Bundle:
@@ -8,7 +7,7 @@ jobs:
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
-        run: mv * idTip
+        run: mv !(idTip) idTip
       - name: Zip idTip
         uses: montudor/action-zip@v1.0.0
         with:
