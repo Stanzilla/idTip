@@ -7,12 +7,12 @@ jobs:
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
-        run: "mv !(idTip) idTip"
+        run: mv *.toc idTip/ && mv clients/ idTip/ && mv lib/ idTip/ && mv libs/ idTip/
       - name: Zip idTip
         uses: montudor/action-zip@v1.0.0
         with:
           args: zip -qq -r idTip.zip idTip
-      - name: Upload Releasae Package
+      - name: Upload Release Package
         uses: actions/upload-artifact@v2
         with:
           name: Release
