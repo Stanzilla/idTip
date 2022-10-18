@@ -10,6 +10,7 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 ## Downloads
 
 TBD
+
 [GitHub](https://github.com/ItsJustMeChris/idTip-Community-Fork/releases)
 
 ## Usage
