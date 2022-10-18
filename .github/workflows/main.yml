@@ -26,6 +26,7 @@ jobs:
         with:
           draft: false
           prerelease: false
+          tag_name: ${{ github.sha }}
           release_name: idTip
           body: ${{ github.event.head_commit.message }}
         env:
