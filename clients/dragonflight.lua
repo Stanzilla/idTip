@@ -124,10 +124,10 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
 			IDTip:addLine(self, id, IDTip.kinds.currency)
 		end)
 
-		local function gameobjecthandler(tooltip, tooltipData)
-      -- DevTools_Dump(tooltipData)
-      -- it may be possible to export GameObjects db2 and map GameObject[name][playerMapId] -> displayID/gameObjectID, but it would add probably 10-15MB of data to the addon, they could be seperate support files for users who want that functionality though..
-		end
-		TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Object, gameobjecthandler)
+		-- local function gameobjecthandler(tooltip, tooltipData)
+		--   -- DevTools_Dump(tooltipData)
+		--   -- it may be possible to export GameObjects db2 and map GameObject[name][playerMapId] -> displayID/gameObjectID, but it would add probably 10-15MB of data to the addon, they could be seperate support files for users who want that functionality though..
+		-- end
+		-- TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Object, gameobjecthandler)
 	end
 end
