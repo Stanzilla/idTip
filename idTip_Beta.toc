@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100002
 ## Title: idTip
 ## Version: 11
 ## Notes: Adds IDs to the ingame tooltips
@@ -9,4 +9,4 @@ lib/shared.lua
 lib/settings.lua
 lib/helpers.lua
 clients/shared.lua
-clients/shadowlands.lua
+clients/dragonflight.lua
