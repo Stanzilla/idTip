@@ -26,22 +26,11 @@ jobs:
           name: idTip
           path: idTip
       - name: release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@v1.11.1
         id: create_release
         with:
-          draft: false
-          prerelease: false
-          tag_name: ${{ github.run_id }}
-          release_name: idTip
+          name: idTip
           body: ${{ github.event.head_commit.message }}
+          artifacts: "idTip"
         env:
           GITHUB_TOKEN: ${{ github.token }}
-      - name: Upload artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: idTip.zip
-          asset_name: idTip.zip
-          asset_content_type: application/zip
