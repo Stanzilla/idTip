@@ -72,10 +72,12 @@ function IDTipLib:addGenericLine(tooltip, line)
 	tooltip:AddLine(left)
 end
 
+local hooked = {}
+
 function IDTipLib:addLine(tooltip, id, kind)
-  if not IDTIP_CONFIG[IDTip.kinds_inverse[kind]] then
-    return
-  end
+	if not IDTIP_CONFIG[IDTip.kinds_inverse[kind]] then
+		return
+	end
 
 	if not id or id == "" then
 		return
@@ -144,9 +146,14 @@ function IDTipLib:addLine(tooltip, id, kind)
 		end
 	end
 
-	tooltip:HookScript("OnHide", function()
-		ALL_IDS = {}
-	end)
+	-- Try to avoid C stack overflow from hookscript, only do it once
+	if not hooked[tooltip] then
+		hooked[tooltip] = true
+
+		tooltip:HookScript("OnHide", function()
+			ALL_IDS = {}
+		end)
+	end
 
 	tooltip:Show()
 end
