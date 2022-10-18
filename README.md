@@ -11,9 +11,7 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 
 TBD
 
-https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip
-
-<p align="center">
+<p align="left">
     <a href="https://nightly.link/ItsJustMeChris/idTip-Community-Fork/workflows/main/master/idTip.zip"><img src="https://img.shields.io/badge/Download%20idTip-blue" alt="idTip.zip" /></a>
 </p>
 
