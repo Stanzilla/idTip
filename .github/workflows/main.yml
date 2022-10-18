@@ -12,6 +12,17 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - uses: actions/checkout@v1
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        env:
+          GITHUB_TOKEN: "${{ github.token }}"
+      - name: 'Get next minor version'
+        id: semvers
+        uses: "WyriHaximus/github-action-next-semvers@v1"
+        with:
+          version: ${{ steps.previoustag.outputs.tag }}
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
@@ -29,6 +40,7 @@ jobs:
         uses: ncipollo/release-action@v1.11.1
         id: create_release
         with:
+          tag: 1
           name: idTip
           body: ${{ github.event.head_commit.message }}
           artifacts: "idTip"
