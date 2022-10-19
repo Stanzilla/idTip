@@ -134,11 +134,13 @@ local function attachItemTooltip(self)
 	end
 end
 
-ItemRefTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
-ItemRefShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
-ItemRefShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
-ShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
-ShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+if not IDTip.Helpers.IsDragonflight() then
+	ItemRefTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ItemRefShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ItemRefShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ShoppingTooltip1:HookScript("OnTooltipSetItem", attachItemTooltip)
+	ShoppingTooltip2:HookScript("OnTooltipSetItem", attachItemTooltip)
+end
 
 IDTip:RegisterAddonLoad("Blizzard_Collections", function()
 	PetJournalPetCardPetInfo:HookScript("OnEnter", function(self)
