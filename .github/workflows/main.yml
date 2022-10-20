@@ -29,6 +29,11 @@ jobs:
           find: "{{IDTIP_VERSION}}"
           replace: ${{ steps.semvers.outputs.patch }}
           regex: false
+      - name: Generate changelog
+          id: changelog
+          uses: metcalfc/changelog-generator@v3.0.0
+          with:
+            myToken: ${{ github.token }}
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
@@ -47,8 +52,8 @@ jobs:
         id: create_release
         with:
           tag: ${{ steps.semvers.outputs.patch }}
-          name: idTip
-          body: ${{ github.event.head_commit.message }}
+          name: idTip v${{ steps.semvers.outputs.patch }}
+          body: ${{ steps.changelog.outputs.changelog }}
           artifacts: "idTip.zip"
         env:
           GITHUB_TOKEN: ${{ github.token }}
