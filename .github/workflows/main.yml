@@ -52,7 +52,7 @@ jobs:
         id: create_release
         with:
           tag: ${{ steps.semvers.outputs.patch }}
-          name: idTip
+          name: idTip v${{ steps.semvers.outputs.patch }}
           body: ${{ steps.changelog.outputs.changelog }}
           artifacts: "idTip.zip"
         env:
