@@ -379,9 +379,11 @@ if not IDTip.Helpers.IsDragonflight() then
 		end)
 	end)
 
-	hooksecurefunc(GameTooltip, "SetCurrencyTokenByID", function(self, id)
-		IDTip:addLine(self, id, IDTip.kinds.currency)
-	end)
+	if not IDTip.Helpers.IsEra() then
+		hooksecurefunc(GameTooltip, "SetCurrencyTokenByID", function(self, id)
+			IDTip:addLine(self, id, IDTip.kinds.currency)
+		end)
+	end
 end
 
 if IDTip.Helpers.IsDragonflight() then

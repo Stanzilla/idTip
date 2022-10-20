@@ -3,7 +3,7 @@ local _, IDTip = ...
 local Helpers = {}
 
 function Helpers.GetQuestID()
-	if QuestInfoFrame.questLog then
+	if QuestInfoFrame.questLog and C_QuestLog and C_QuestLog.GetSelectedQuest then
 		return C_QuestLog.GetSelectedQuest()
 	else
 		return GetQuestID()
@@ -29,6 +29,10 @@ end
 
 function Helpers.IsClassic()
 	return Helpers.GetGameVersion() < 90000
+end
+
+function Helpers.IsEra()
+	return Helpers.GetGameVersion() < 20000
 end
 
 IDTip.Helpers = Helpers
