@@ -1,6 +1,6 @@
 ## Interface: 100002
 ## Title: idTip
-## Version: 11
+## Version: {{IDTIP_VERSION}}
 ## Notes: Adds IDs to the ingame tooltips
 ## Author: silverwind, ItsJustMeChris
 ## SavedVariables: IDTIP_CONFIG

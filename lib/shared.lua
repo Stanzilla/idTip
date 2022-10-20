@@ -231,6 +231,6 @@ function IDTipLib:Log(...)
 	print("|cffFF8000[IDTip]|r ", ...)
 end
 
-IDTipLib:Log("Library Loaded")
+IDTipLib:Log("Library Loaded", "{{IDTIP_VERSION}}")
 
 setmetatable(IDTip, { __index = setmetatable(IDTipLib, getmetatable(IDTip)) })

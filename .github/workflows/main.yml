@@ -23,6 +23,12 @@ jobs:
         uses: "WyriHaximus/github-action-next-semvers@v1"
         with:
           version: ${{ steps.previoustag.outputs.tag }}
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "{{IDTIP_VERSION}}"
+          replace: ${{ steps.semvers.outputs.patch }}
+          regex: false
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
