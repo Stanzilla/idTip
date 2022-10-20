@@ -48,15 +48,6 @@ IDTip.kinds_inverse = table_invert(IDTip.kinds)
 
 local ALL_IDS = {}
 
-local function contains(table, element)
-	for _, value in pairs(table) do
-		if value == element then
-			return true
-		end
-	end
-	return false
-end
-
 -- Add raw text to a tooltip
 -- @tooltip | Tooltip frame IE: GameTooltip
 -- @line | string | number the text to apply to the tooltip

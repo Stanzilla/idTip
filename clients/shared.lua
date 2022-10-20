@@ -350,19 +350,19 @@ if not IDTip.Helpers.IsDragonflight() then
 	GameTooltip:HookScript("OnTooltipSetItem", attachItemTooltip)
 
 	IDTip:RegisterAddonLoad("Blizzard_Collections", function()
-		hooksecurefunc("WardrobeCollectionFrame_SetAppearanceTooltip", function(self, sources)
+		hooksecurefunc(WardrobeCollectionFrame, "SetAppearanceTooltip", function(self, t, sources)
 			local visualIDs = {}
 			local sourceIDs = {}
 			local itemIDs = {}
 
 			for i = 1, #sources do
-				if sources[i].visualID and not contains(visualIDs, sources[i].visualID) then
+				if sources[i].visualID and not IDTip.Helpers.contains(visualIDs, sources[i].visualID) then
 					table.insert(visualIDs, sources[i].visualID)
 				end
-				if sources[i].sourceID and not contains(visualIDs, sources[i].sourceID) then
+				if sources[i].sourceID and not IDTip.Helpers.contains(visualIDs, sources[i].sourceID) then
 					table.insert(sourceIDs, sources[i].sourceID)
 				end
-				if sources[i].itemID and not contains(visualIDs, sources[i].itemID) then
+				if sources[i].itemID and not IDTip.Helpers.contains(visualIDs, sources[i].itemID) then
 					table.insert(itemIDs, sources[i].itemID)
 				end
 			end
