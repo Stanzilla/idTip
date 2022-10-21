@@ -1,5 +1,3 @@
-
-
 # idTip
 
 Adds anything's IDs to the ingame tooltips.
@@ -21,6 +19,7 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 </p>
 
 ## Usage
+
 ```
 Hover over stuff
 
@@ -69,6 +68,9 @@ IDTip.kinds = {
 	traitconfig = "TraitConfigID",
 	traitentry = "TraitEntryID",
 	traitdef = "TraitDefinitionID",
+  profspecnode = "ProfessionNodeID",
+  rootprofspecnode = "RootProfNodeID",
+  profspectreeid = "ProfessionTreeID",
 }
 
 -- Inverse of the kinds table, useful for going back and forth programmatically for whatever reason
