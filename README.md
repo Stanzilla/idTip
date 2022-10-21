@@ -1,5 +1,3 @@
-
-
 # idTip
 
 Adds anything's IDs to the ingame tooltips.
@@ -21,6 +19,7 @@ Please report any requests/bugs through an [issue](https://github.com/ItsJustMeC
 </p>
 
 ## Usage
+
 ```
 Hover over stuff
 
@@ -37,38 +36,41 @@ You can enable/disable displaying IDs with the command
 
 -- The kinds of IDs you can apply to Tooltips
 IDTip.kinds = {
-	spell = "SpellID",
-	item = "ItemID",
-	unit = "NPC ID",
-	quest = "QuestID",
-	talent = "TalentID",
-	achievement = "AchievementID",
-	criteria = "CriteriaID",
-	ability = "AbilityID",
-	currency = "CurrencyID",
-	artifactpower = "ArtifactPowerID",
-	enchant = "EnchantID",
-	bonus = "BonusID",
-	gem = "GemID",
-	mount = "MountID",
-	companion = "CompanionID",
-	macro = "MacroID",
-	equipmentset = "EquipmentSetID",
-	visual = "VisualID",
-	source = "SourceID",
-	species = "SpeciesID",
-	icon = "IconID",
-	areapoi = "AreaPoiID",
-	vignette = "VignetteID",
-	ctrait = "TraitNodeID",
-	cgarrisontalent = "GarrisonTalentID",
-	ccovenantsanctumtree = "SanctumTalentTreeID",
-	cgarrisontalenttree = "GarrisonTalentTreeID",
-	mission = "MissionID",
-	guid = "GUID",
-	traitconfig = "TraitConfigID",
-	traitentry = "TraitEntryID",
-	traitdef = "TraitDefinitionID",
+  spell = "SpellID",
+  item = "ItemID",
+  unit = "NPC ID",
+  quest = "QuestID",
+  talent = "TalentID",
+  achievement = "AchievementID",
+  criteria = "CriteriaID",
+  ability = "AbilityID",
+  currency = "CurrencyID",
+  artifactpower = "ArtifactPowerID",
+  enchant = "EnchantID",
+  bonus = "BonusID",
+  gem = "GemID",
+  mount = "MountID",
+  companion = "CompanionID",
+  macro = "MacroID",
+  equipmentset = "EquipmentSetID",
+  visual = "VisualID",
+  source = "SourceID",
+  species = "SpeciesID",
+  icon = "IconID",
+  areapoi = "AreaPoiID",
+  vignette = "VignetteID",
+  ctrait = "TraitNodeID",
+  cgarrisontalent = "GarrisonTalentID",
+  ccovenantsanctumtree = "SanctumTalentTreeID",
+  cgarrisontalenttree = "GarrisonTalentTreeID",
+  mission = "MissionID",
+  guid = "GUID",
+  traitconfig = "TraitConfigID",
+  traitentry = "TraitEntryID",
+  traitdef = "TraitDefinitionID",
+  profspecnode = "ProfessionNodeID",
+  rootprofspecnode = "RootProfNodeID",
+  profspectreeid = "ProfessionTreeID",
 }
 
 -- Inverse of the kinds table, useful for going back and forth programmatically for whatever reason
