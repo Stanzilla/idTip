@@ -36,6 +36,9 @@ IDTip.kinds = {
 	traitconfig = "TraitConfigID",
 	traitentry = "TraitEntryID",
 	traitdef = "TraitDefinitionID",
+  profspecnode = "ProfessionNodeID",
+  rootprofspecnode = "RootProfNodeID",
+  profspectreeid = "ProfessionTreeID",
 }
 
 local function table_invert(t)
