@@ -37,7 +37,7 @@ jobs:
       - name: Make idTip directory
         run: mkdir idTip
       - name: Move all files to idTip directory
-        run: mv *.toc idTip/ && mv clients/ idTip/ && mv lib/ idTip/ && mv libs/ idTip/
+        run: mv *.toc idTip/ && mv clients/ idTip/ && mv core/ idTip/ && mv libs/ idTip/
       - name: Zip idTip
         uses: montudor/action-zip@v1.0.0
         with:
