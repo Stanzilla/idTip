@@ -33,6 +33,9 @@ IDTip.kinds = {
 	cgarrisontalenttree = "GarrisonTalentTreeID",
 	mission = "MissionID",
 	guid = "GUID",
+	traitconfig = "TraitConfigID",
+	traitentry = "TraitEntryID",
+	traitdef = "TraitDefinitionID",
 }
 
 local function table_invert(t)
@@ -75,7 +78,7 @@ local hooked = {}
 -- @id | a single id (string | number) or an array of id's
 -- @kind | an IDTip.kinds kind
 function IDTipLib:addLine(tooltip, id, kind)
-	if not IDTIP_CONFIG[IDTip.kinds_inverse[kind]] then
+	if IDTIP_CONFIG[IDTip.kinds_inverse[kind]] == false then
 		return
 	end
 

@@ -91,7 +91,7 @@ IDTip:RegisterAddonLoad("idTip", function()
 		myCheckButton:SetPoint("TOPLEFT", 10, checks * -20)
 		myCheckButton.Text:SetText(IDTip.kinds[option])
 		myCheckButton.tooltip = "Enable showing " .. IDTip.kinds[option]
-		myCheckButton:SetChecked(IDTIP_CONFIG[option])
+		myCheckButton:SetChecked(IDTIP_CONFIG[option] or IDTIP_CONFIG[option] == nil)
 		myCheckButton:SetScript("OnClick", function(self)
 			IDTIP_CONFIG[option] = self:GetChecked()
 		end)
