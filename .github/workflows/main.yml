@@ -41,7 +41,7 @@ jobs:
       - name: Zip idTip
         uses: montudor/action-zip@v1.0.0
         with:
-          args: zip -qq -r idTip.zip idTip
+          args: zip -qq -r idTip-${{ steps.semvers.outputs.patch }}.zip idTip
       - name: Upload Release Package
         uses: actions/upload-artifact@v2
         with:
@@ -54,6 +54,6 @@ jobs:
           tag: ${{ steps.semvers.outputs.patch }}
           name: idTip v${{ steps.semvers.outputs.patch }}
           body: ${{ steps.changelog.outputs.changelog }}
-          artifacts: "idTip.zip"
+          artifacts: "idTip-${{ steps.semvers.outputs.patch }}.zip"
         env:
           GITHUB_TOKEN: ${{ github.token }}
