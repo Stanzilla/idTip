@@ -5,9 +5,9 @@
 ## Author: silverwind, ItsJustMeChris
 ## SavedVariables: IDTIP_CONFIG
 libs/LibStub.lua
-lib/shared.lua
-lib/settings.lua
-lib/helpers.lua
+core/shared.lua
+core/settings.lua
+core/helpers.lua
 clients/shared.lua
 clients/shadowlands.lua
 clients/dragonflight.lua
