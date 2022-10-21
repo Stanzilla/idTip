@@ -66,6 +66,9 @@ IDTip.kinds = {
 	cgarrisontalenttree = "GarrisonTalentTreeID",
 	mission = "MissionID",
 	guid = "GUID",
+	traitconfig = "TraitConfigID",
+	traitentry = "TraitEntryID",
+	traitdef = "TraitDefinitionID",
 }
 
 -- Inverse of the kinds table, useful for going back and forth programmatically for whatever reason
