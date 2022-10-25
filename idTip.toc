@@ -1,4 +1,4 @@
-## Interface: 90207
+## Interface: 100000
 ## Title: idTip
 ## Version: {{IDTIP_VERSION}}
 ## Notes: Adds IDs to the ingame tooltips
