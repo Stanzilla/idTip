@@ -303,41 +303,36 @@ if not IDTip.Helpers.IsClassic() then
     end
   end)
 
-  local questFrameID = CreateFrame("Frame", nil, QuestFrame)
-  questFrameID:SetWidth(1)
-  questFrameID:SetHeight(1)
-  questFrameID:SetAlpha(0.90)
-  questFrameID:SetPoint("TOPLEFT", 100, -45)
-  questFrameID.text = questFrameID:CreateFontString(nil, "ARTWORK")
-  questFrameID.text:SetFont("Fonts\\ARIALN.ttf", 13, "OUTLINE")
-  questFrameID.text:SetPoint("CENTER", 0, 0)
-  questFrameID:Hide()
+-- 	local questFrameID = CreateFrame("Frame", nil, QuestFrame)
+-- 	questFrameID:SetWidth(1)
+-- 	questFrameID:SetHeight(1)
+-- 	questFrameID:SetAlpha(0.90)
+-- 	questFrameID:SetPoint("TOPLEFT", 100, -45)
+-- 	questFrameID.text = questFrameID:CreateFontString(nil, "ARTWORK")
+-- 	questFrameID.text:SetFont("Fonts\\ARIALN.ttf", 13, "OUTLINE")
+-- 	questFrameID.text:SetPoint("CENTER", 0, 0)
+-- 	questFrameID:Hide()
 
-  local questMapFrameID = CreateFrame("Frame", nil, QuestMapFrame)
-  questMapFrameID:SetWidth(1)
-  questMapFrameID:SetHeight(1)
-  questMapFrameID:SetAlpha(0.90)
-  questMapFrameID:SetPoint("TOPLEFT", 150, -22)
-  questMapFrameID.text = questMapFrameID:CreateFontString(nil, "ARTWORK")
-  questMapFrameID.text:SetFont("Fonts\\ARIALN.ttf", 13, "OUTLINE")
-  questMapFrameID.text:SetPoint("CENTER", 0, 0)
-  questMapFrameID:Hide()
+-- 	local questMapFrameID = CreateFrame("Frame", nil, QuestMapFrame)
+-- 	questMapFrameID:SetWidth(1)
+-- 	questMapFrameID:SetHeight(1)
+-- 	questMapFrameID:SetAlpha(0.90)
+-- 	questMapFrameID:SetPoint("TOPLEFT", 150, -22)
+-- 	questMapFrameID.text = questMapFrameID:CreateFontString(nil, "ARTWORK")
+-- 	questMapFrameID.text:SetFont("Fonts\\ARIALN.ttf", 13, "OUTLINE")
+-- 	questMapFrameID.text:SetPoint("CENTER", 0, 0)
+-- 	questMapFrameID:Hide()
 
-  -- Quests (again)
-  hooksecurefunc("QuestMapFrame_ShowQuestDetails", function()
-    if IDTip:kindEnabled(IDTip.kinds.quest) then
-      questMapFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
-      questMapFrameID:Show()
-    end
-  end)
+-- 	hooksecurefunc("QuestMapFrame_ShowQuestDetails", function()
+-- 		questMapFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
+-- 		questMapFrameID:Show()
+-- 	end)
 
-  QuestFrame:HookScript("OnShow", function()
-    if IDTip:kindEnabled(IDTip.kinds.quest) then
-      questFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
-      questFrameID:Show()
-    end
-  end)
-end
+-- 	QuestFrame:HookScript("OnShow", function()
+-- 		questFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
+-- 		questFrameID:Show()
+-- 	end)
+ end
 
 if not IDTip.Helpers.IsDragonflight() then
   GameTooltip:HookScript("OnTooltipSetUnit", function(self)
