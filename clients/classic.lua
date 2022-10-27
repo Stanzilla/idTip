@@ -4,8 +4,6 @@ local _, IDTip = ...
 
 if IDTip.Helpers.IsClassic() then
 	do
-		IDTip:Log("Classic Loaded")
-
 		local questFrameID = CreateFrame("Frame", nil, QuestFrame)
 		questFrameID:SetWidth(1)
 		questFrameID:SetHeight(1)

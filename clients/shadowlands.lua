@@ -2,8 +2,6 @@ local _, IDTip = ...
 
 if IDTip.Helpers.IsShadowlands() then
 	do
-    IDTip:Log("Shadowlands Loaded")
-
 		GameTooltip:HookScript("OnTooltipSetSpell", function(self)
 			local id = select(2, self:GetSpell())
 			IDTip:addLine(self, id, IDTip.kinds.spell)
