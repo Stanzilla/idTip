@@ -17,6 +17,11 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
 					IDTip:addLine(self, outputItemInfo.itemID, IDTip.kinds.item)
 				end
 			end)
+		else
+			GameTooltip:HookScript("OnTooltipSetSpell", function(self)
+				local id = select(2, self:GetSpell())
+				IDTip:addLine(self, id, IDTip.kinds.spell)
+			end)
 		end
 
 		hooksecurefunc(NameplateBuffButtonTemplateMixin, "OnEnter", function(self)
