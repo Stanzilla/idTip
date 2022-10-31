@@ -1,5 +1,5 @@
 ## Interface: 11403
-## Title: idTip
+## Title: idTip Community Fork
 ## Version: {{IDTIP_VERSION}}
 ## Notes: Adds IDs to the ingame tooltips
 ## Author: silverwind, ItsJustMeChris
