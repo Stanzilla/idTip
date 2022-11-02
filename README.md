@@ -37,6 +37,7 @@ You can enable/disable displaying IDs with the command
 -- The kinds of IDs you can apply to Tooltips
 IDTip.kinds = {
   spell = "SpellID",
+  itemspell = "ItemSpellID",
   item = "ItemID",
   unit = "NPC ID",
   quest = "QuestID",
@@ -107,3 +108,8 @@ function IDTipLib:Log(...)
 
 
 ```
+
+## Contributors
+
+[zarillion](https://github.com/zarillion)
+[Dunati](https://github.com/Dunati)
