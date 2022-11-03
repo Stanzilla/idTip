@@ -106,6 +106,9 @@ function IDTipLib:RegisterAddonLoad(addon, cb)
 -- @... | vararg parameters to add to the print statement
 function IDTipLib:Log(...)
 
+-- Check if a kind is enabled in the IDTIP_CONFIG
+-- @kind | string or IDTip.Kinds value
+function IDTipLib:kindEnabled(kind)
 
 ```
 
@@ -114,3 +117,5 @@ function IDTipLib:Log(...)
 [zarillion](https://github.com/zarillion)
 
 [Dunati](https://github.com/Dunati)
+
+[agentschmitt](https://github.com/agentschmitt)
