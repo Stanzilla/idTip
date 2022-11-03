@@ -201,7 +201,7 @@ function IDTipLib:addLineByKind(frame, id, kind)
 	end
 end
 
-function IDTipLib:enablesKind(kind)
+function IDTipLib:kindEnabled(kind)
 	if not kind then
 		return false
 	end
