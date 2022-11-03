@@ -201,6 +201,18 @@ function IDTipLib:addLineByKind(frame, id, kind)
 	end
 end
 
+function IDTipLib:enablesKind(kind)
+	if not kind then
+		return false
+	end
+
+	if IDTIP_CONFIG[IDTip.kinds_inverse[kind]] == false then
+		return false
+	end
+
+	return true
+end
+
 local addon_watchers = {}
 
 -- Register the addon loaded event listener for a specific addon

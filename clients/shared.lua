@@ -321,14 +321,19 @@ if not IDTip.Helpers.IsClassic() then
 	questMapFrameID.text:SetPoint("CENTER", 0, 0)
 	questMapFrameID:Hide()
 
+	-- Quests (again)
 	hooksecurefunc("QuestMapFrame_ShowQuestDetails", function()
-		questMapFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
-		questMapFrameID:Show()
+		if IDTip:enablesKind(IDTip.kinds.quest) then			
+			questMapFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
+			questMapFrameID:Show()
+		end
 	end)
 
 	QuestFrame:HookScript("OnShow", function()
-		questFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
-		questFrameID:Show()
+		if IDTip:enablesKind(IDTip.kinds.quest) then			
+			questFrameID.text:SetText("QuestID: " .. IDTip.Helpers.GetQuestID())
+			questFrameID:Show()
+		end
 	end)
 end
 
