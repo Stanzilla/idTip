@@ -6,6 +6,103 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
 	do
 		IDTip:Log("Dragonflight Loaded")
 
+		IDTip:RegisterAddonLoad("Blizzard_AchievementUI", function()
+			hooksecurefunc(AchievementTemplateMixin, "OnEnter", function(self)
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:SetPoint("TOPLEFT", self, "TOPRIGHT", 0, 0)
+				IDTip:addLine(GameTooltip, self.id, IDTip.kinds.achievement)
+				GameTooltip:Show()
+			end)
+
+			hooksecurefunc("AchievementFrameSummaryAchievement_OnEnter", function(self)
+				GameTooltip:SetOwner(self, "ANCHOR_NONE")
+				GameTooltip:SetPoint("TOPLEFT", self, "TOPRIGHT", 0, 0)
+				IDTip:addLine(GameTooltip, self.id, IDTip.kinds.achievement)
+				GameTooltip:Show()
+			end)
+
+			local hooked = {}
+
+			local fr = AchievementTemplateMixin:GetObjectiveFrame()
+			hooksecurefunc(fr, "GetMiniAchievement", function(self, index)
+				local frame = self:GetElementAtIndex(
+					"MiniAchievementTemplate",
+					self.miniAchivements,
+					index,
+					AchievementButton_LocalizeMiniAchievement
+				)
+
+				if hooked[frame] then
+					return
+				end
+
+				hooked[frame] = true
+
+				frame:HookScript("OnEnter", function(self)
+					local button = self:GetParent() and self:GetParent():GetParent()
+					if not button or not button.id then
+						return
+					end
+
+					local achievementList = {}
+					for i in next, achievementList do
+						achievementList[i] = nil
+					end
+
+					local achievementID = button.id
+
+					tinsert(achievementList, 1, achievementID)
+					while GetPreviousAchievement(achievementID) do
+						tinsert(achievementList, 1, GetPreviousAchievement(achievementID))
+						achievementID = GetPreviousAchievement(achievementID)
+					end
+
+					local aid = achievementList[index]
+					-- GameTooltip:SetOwner(button:GetParent(), "ANCHOR_NONE")
+					-- GameTooltip:SetPoint("TOPLEFT", button, "TOPRIGHT", 0, 0)
+					IDTip:addLine(GameTooltip, aid, IDTip.kinds.achievement)
+					GameTooltip:Show()
+				end)
+
+				frame:HookScript("OnLeave", function()
+					GameTooltip:Hide()
+				end)
+			end)
+
+			hooksecurefunc(fr, "GetCriteria", function(self, index)
+				local frame = self:GetElementAtIndex(
+					"AchievementCriteriaTemplate",
+					self.criterias,
+					index,
+					AchievementFrame_LocalizeCriteria
+				)
+
+				if hooked[frame] then
+					return
+				end
+
+				hooked[frame] = true
+
+				frame:HookScript("OnEnter", function(self)
+					local button = self:GetParent() and self:GetParent():GetParent()
+					if not button or not button.id then
+						return
+					end
+
+					local criteriaid = select(10, GetAchievementCriteriaInfo(button.id, index))
+					GameTooltip:SetOwner(button:GetParent(), "ANCHOR_NONE")
+					GameTooltip:SetPoint("TOPLEFT", button, "TOPRIGHT", 0, 0)
+					IDTip:addLine(GameTooltip, button.id, IDTip.kinds.achievement)
+					IDTip:addLine(GameTooltip, criteriaid, IDTip.kinds.criteria)
+					GameTooltip:Show()
+				end)
+
+				frame:HookScript("OnLeave", function()
+					GameTooltip:Hide()
+				end)
+			end)
+		end)
+
 		if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
 			TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, function(self, a)
 				local id = select(2, self:GetSpell())
