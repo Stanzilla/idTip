@@ -1,4 +1,4 @@
-name: Bundle/Release idTip.zip
+name: Bundle/Release idTip_CommunityFork.zip
 
 on:
   push:
@@ -34,26 +34,26 @@ jobs:
         uses: metcalfc/changelog-generator@v3.0.0
         with:
           myToken: ${{ github.token }}
-      - name: Make idTip directory
-        run: mkdir idTip
-      - name: Move all files to idTip directory
-        run: mv *.toc idTip/ && mv clients/ idTip/ && mv core/ idTip/ && mv libs/ idTip/
-      - name: Zip idTip
+      - name: Make idTip_CommunityFork directory
+        run: mkdir idTip_CommunityFork
+      - name: Move all files to idTip_CommunityFork directory
+        run: mv *.toc idTip_CommunityFork/ && mv clients/ idTip_CommunityFork/ && mv core/ idTip_CommunityFork/ && mv libs/ idTip_CommunityFork/
+      - name: Zip idTip_CommunityFork
         uses: montudor/action-zip@v1.0.0
         with:
-          args: zip -qq -r idTip-${{ steps.semvers.outputs.patch }}.zip idTip
+          args: zip -qq -r idTip_CommunityFork-${{ steps.semvers.outputs.patch }}.zip idTip_CommunityFork
       - name: Upload Release Package
         uses: actions/upload-artifact@v2
         with:
-          name: idTip
-          path: idTip
+          name: idTip_CommunityFork
+          path: idTip_CommunityFork
       - name: release
         uses: ncipollo/release-action@v1.11.1
         id: create_release
         with:
           tag: ${{ steps.semvers.outputs.patch }}
-          name: idTip v${{ steps.semvers.outputs.patch }}
+          name: idTip_CommunityFork v${{ steps.semvers.outputs.patch }}
           body: ${{ steps.changelog.outputs.changelog }}
-          artifacts: "idTip-${{ steps.semvers.outputs.patch }}.zip"
+          artifacts: "idTip_CommunityFork-${{ steps.semvers.outputs.patch }}.zip"
         env:
           GITHUB_TOKEN: ${{ github.token }}

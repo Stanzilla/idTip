@@ -1,5 +1,5 @@
-## Interface: 20504
-## Title: idTip Community Fork
+## Interface: 100002
+## Title: idTip_CommunityFork
 ## Version: {{IDTIP_VERSION}}
 ## Notes: Adds IDs to the ingame tooltips
 ## Author: silverwind, ItsJustMeChris
@@ -9,4 +9,4 @@ core/shared.lua
 core/settings.lua
 core/helpers.lua
 clients/shared.lua
-clients/classic.lua
+clients/dragonflight.lua
