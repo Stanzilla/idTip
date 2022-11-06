@@ -1,12 +1,12 @@
 local _, IDTip = ...
 
-IDTip:RegisterAddonLoad("idTip", function()
-	local DEFAULTS = {}
+IDTip:RegisterAddonLoad("idTip_CommunityFork", function()
+	local DEFAULT_VALUES = {}
 	for k, v in pairs(IDTip.kinds) do
-		DEFAULTS[k] = true
+		DEFAULT_VALUES[k] = true
 	end
 
-	IDTIP_CONFIG = IDTIP_CONFIG ~= nil and IDTIP_CONFIG or DEFAULTS
+	IDTIP_CONFIG = IDTIP_CONFIG ~= nil and IDTIP_CONFIG or DEFAULT_VALUES
 
 	local idTipFrame = CreateFrame("Frame", nil, nil, "BackdropTemplate")
 	idTipFrame:ClearAllPoints()
