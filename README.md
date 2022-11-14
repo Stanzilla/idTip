@@ -72,6 +72,8 @@ IDTip.kinds = {
   profspecnode = "ProfessionNodeID",
   rootprofspecnode = "RootProfNodeID",
   profspectreeid = "ProfessionTreeID",
+  expansion = "ExpansionID",
+  unittoken = "CasterToken"
 }
 
 -- Inverse of the kinds table, useful for going back and forth programmatically for whatever reason
