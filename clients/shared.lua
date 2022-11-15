@@ -194,11 +194,11 @@ IDTip:RegisterAddonLoad("Blizzard_CovenantSanctum", function()
 end)
 
 if not IDTip.Helpers.IsClassic() then
-  if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
-    hooksecurefunc(GameTooltip, "SetRecipeResultItem", function(self, id)
-      IDTip:addLine(self, id, IDTip.kinds.spell)
-    end)
-  end
+  -- if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
+  hooksecurefunc(GameTooltip, "SetRecipeResultItem", function(self, id)
+    IDTip:addLine(self, id, IDTip.kinds.spell)
+  end)
+  -- end
 
   hooksecurefunc(GameTooltip, "SetRecipeRankInfo", function(self, id)
     IDTip:addLine(self, id, IDTip.kinds.spell)

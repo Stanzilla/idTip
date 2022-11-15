@@ -103,23 +103,23 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
       end)
     end)
 
-    if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
-      TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, function(self, a)
-        local id = select(2, self:GetSpell())
-        IDTip:addLine(self, id, IDTip.kinds.spell)
+    -- if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
+    TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Spell, function(self, a)
+      local id = select(2, self:GetSpell())
+      IDTip:addLine(self, id, IDTip.kinds.spell)
 
-        local outputItemInfo = C_TradeSkillUI.GetRecipeOutputItemData(id, nil)
-        if outputItemInfo and outputItemInfo.itemID then
-          IDTip:addGenericLine(self, "== Recipe Output ==") -- TODO: RecipeOutputItemID type ?
-          IDTip:addLine(self, outputItemInfo.itemID, IDTip.kinds.item)
-        end
-      end)
-    else
-      GameTooltip:HookScript("OnTooltipSetSpell", function(self)
-        local id = select(2, self:GetSpell())
-        IDTip:addLine(self, id, IDTip.kinds.spell)
-      end)
-    end
+      local outputItemInfo = C_TradeSkillUI.GetRecipeOutputItemData(id, nil)
+      if outputItemInfo and outputItemInfo.itemID then
+        IDTip:addGenericLine(self, "== Recipe Output ==") -- TODO: RecipeOutputItemID type ?
+        IDTip:addLine(self, outputItemInfo.itemID, IDTip.kinds.item)
+      end
+    end)
+    -- else
+    --   GameTooltip:HookScript("OnTooltipSetSpell", function(self)
+    --     local id = select(2, self:GetSpell())
+    --     IDTip:addLine(self, id, IDTip.kinds.spell)
+    --   end)
+    -- end
 
     hooksecurefunc(NameplateBuffButtonTemplateMixin, "OnEnter", function(self)
       IDTip:addLine(NamePlateTooltip, self.spellID, IDTip.kinds.spell)
@@ -167,11 +167,11 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
       end
     end)
 
-    if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
-      hooksecurefunc(GameTooltip, "SetRecipeResultItemForOrder", function(self, id)
-        IDTip:addLine(self, id, IDTip.kinds.spell)
-      end)
-    end
+    -- if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
+    hooksecurefunc(GameTooltip, "SetRecipeResultItemForOrder", function(self, id)
+      IDTip:addLine(self, id, IDTip.kinds.spell)
+    end)
+    -- end
 
     local function onTooltipSetUnitFunction(tooltip, tooltipData)
       if not isClassicWow then
@@ -190,9 +190,9 @@ if IDTip.Helpers.IsDragonflight() or IDTip.Helpers.IsPTR() then
       end
     end
 
-    if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
-      TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, onTooltipSetUnitFunction)
-    end
+    -- if not IDTip.Helpers.IsPTR() then -- TODO: Remove this eventually
+    TooltipDataProcessor.AddTooltipPostCall(Enum.TooltipDataType.Unit, onTooltipSetUnitFunction)
+    -- end
 
     IDTip:RegisterAddonLoad("Blizzard_Collections", function()
       hooksecurefunc(CollectionWardrobeUtil, "SetAppearanceTooltip", function(self, sources)

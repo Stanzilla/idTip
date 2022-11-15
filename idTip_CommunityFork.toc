@@ -1,4 +1,4 @@
-## Interface: 100000
+## Interface: 100002
 ## Title: idTip_CommunityFork
 ## Version: {{IDTIP_VERSION}}
 ## Notes: Adds IDs to the ingame tooltips
